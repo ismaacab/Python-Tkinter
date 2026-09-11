@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import tkinter as tk
 from tkinter import messagebox
 
-# Configuración del correo electrónico
+# Configuracion del correo electronico
 EMAIL_REMITENTE = "ismaafuentes.26@gmail.com"
 PASSWORD_REMITENTE = "thqh ggyg mnfr nlvy"
 
@@ -35,17 +36,17 @@ def enviar_correo():
         servidor.sendmail(EMAIL_REMITENTE, destinatario, msg.as_string())
         servidor.quit()
 
-        messagebox.showinfo("Éxito", f"¡Correo enviado a {destinatario}!")
+        messagebox.showinfo("Ã‰xito", f"Â¡Correo enviado a {destinatario}!")
     except Exception as e:
         messagebox.showerror("Error", f"No se pudo enviar el correo:\n{e}")
 
 root = tk.Tk()
-root.title("TP Laboratorio 2 - Interfaz Gráfica")
+root.title("TP Laboratorio 2 - Interfaz GrÃ¡fica")
 root.geometry("450x650")
 root.config(bg="#f0f0f0")
 
-# Inserción de imagen personalizada
-# Asegúrate de tener una imagen llamada 'logo.png' en la misma carpeta
+# InserciÃ³n de imagen personalizada
+# AsegÃºrate de tener una imagen llamada 'logo.png' en la misma carpeta
 try:
     imagen_logo = tk.PhotoImage(file="logo.png")
     label_img = tk.Label(root, image=imagen_logo, bg="#f0f0f0")
@@ -58,15 +59,15 @@ tk.Label(root, text="Asunto:", bg="#f0f0f0", font=("Arial", 10, "bold")).pack(an
 entry_asunto = tk.Entry(root, width=40, font=("Arial", 10))
 entry_asunto.pack(pady=5, padx=30)
 
-# Menú desplegable OptionMenu con los correos indicados
+# MenÃº desplegable OptionMenu con los correos indicados
 tk.Label(root, text="Seleccionar Destinatario:", bg="#f0f0f0", font=("Arial", 10, "bold")).pack(anchor="w", padx=30)
 
 opciones_destinatarios = [
     "ismaafuentes.26@gmail.com",
     "lafortaleza246@gmail.com",
     "fjcoronati@gmail.com", # Docente (Profesor del TP)
-    "segundo_docente_prog@gmail.com", # Docente 2 de programación
-    "tercer_docente_prog@gmail.com", # Docente 3 de programación
+    "segundo_docente_prog@gmail.com", # Docente 2 de programaciÃ³n
+    "tercer_docente_prog@gmail.com", # Docente 3 de programaciÃ³n
     "Otro (Escribir manual)"
 ]
 
@@ -77,7 +78,7 @@ menu_desplegable = tk.OptionMenu(root, variable_destino, *opciones_destinatarios
 menu_desplegable.config(width=35, font=("Arial", 9))
 menu_desplegable.pack(pady=5, padx=30)
 
-tk.Label(root, text="Si elegiste 'Otro', escribe el correo aquí:", bg="#f0f0f0", font=("Arial", 9)).pack(anchor="w", padx=30)
+tk.Label(root, text="Si elegiste 'Otro', escribe el correo aquÃ­:", bg="#f0f0f0", font=("Arial", 9)).pack(anchor="w", padx=30)
 entry_manual = tk.Entry(root, width=40, font=("Arial", 10))
 entry_manual.pack(pady=5, padx=30)
 
@@ -85,7 +86,7 @@ tk.Label(root, text="Mensaje:", bg="#f0f0f0", font=("Arial", 10, "bold")).pack(a
 text_mensaje = tk.Text(root, width=38, height=8, font=("Arial", 10))
 text_mensaje.pack(pady=5, padx=30)
 
-btn_enviar = tk.Button(root, text="Enviar Correo Electrónico", command=enviar_correo, bg="#4CAF50", fg="white", font=("Arial", 10, "bold"))
+btn_enviar = tk.Button(root, text="Enviar Correo ElectrÃ³nico", command=enviar_correo, bg="#4CAF50", fg="white", font=("Arial", 10, "bold"))
 btn_enviar.pack(pady=15)
 
 root.mainloop()
