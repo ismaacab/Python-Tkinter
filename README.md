@@ -1,35 +1,37 @@
-# Proyecto Python Tkinter - Gestor y Envío de Correos Electrónicos
+# 📧 Aplicación de Envío de Correos (Tkinter + SMTP)
 
-## 📋 Descripción General del Proyecto
-Este proyecto académico consiste en una aplicación de escritorio desarrollada en **Python** utilizando la librería **Tkinter** para la interfaz gráfica. Su propósito principal es permitir al usuario gestionar y enviar correos electrónicos de forma automatizada e interactiva a través de una interfaz visual intuitiva.
+Aplicación de escritorio en Python para gestionar y enviar correos electrónicos a través del servidor SMTP de Gmail, equipada con una interfaz gráfica interactiva, sonidos dinámicos y soporte para múltiples cuentas.
 
-## ⚙️ Modificaciones Realizadas
-Durante el desarrollo y adaptación de este trabajo práctico, se llevaron a cabo las siguientes modificaciones principales:
-- **Configuración de Conexión:** Integración de los parámetros SMTP para habilitar el envío automatizado de correos electrónicos desde la aplicación.
-- **Personalización de la Interfaz (GUI):** Ajuste de los componentes visuales de Tkinter (etiquetas, campos de entrada y botones) para mejorar la experiencia del usuario.
-- **Manejo de Destinatarios:** Estructuración de los campos de texto para la selección y envío hacia los destinatarios requeridos por la consigna.
-- **Corrección y Codificación:** Normalización del código fuente en formato UTF-8 para garantizar la total compatibilidad con caracteres especiales en entornos Windows.
+---
 
-## 🚀 Archivo Ejecutable (`output/`)
-El proyecto ha sido empaquetado utilizando **PyInstaller** para generar un archivo ejecutable independiente que funciona sin necesidad de tener Python instalado en el equipo.
-- **Ubicación del archivo:** `output/main.exe`
-- **Configuración de compilación:** Generado como un único archivo ejecutable (`--onefile`) y configurado sin ventana de consola de comandos en segundo plano (`--noconsole`).
+## 🚀 Novedades y Últimas Actualizaciones
 
-## 📸 Capturas de Pantalla
+* **Soporte UTF-8 Completo:** Solución definitiva al error de codificación ASCII. Ahora es posible incluir letras **Ñ**, tildes, signos de apertura (`¿`, `¡`) y caracteres especiales tanto en el asunto como en el cuerpo del mensaje.
+* **Efectos de Sonido Interactivos:** 
+  * Feedback sonoro en tiempo real tipo máquina de escribir al presionar cualquier tecla (`winsound`).
+  * Sonidos diferenciados para clics en botones y confirmación de envío exitoso o errores.
+* **Gestión Multi-Remitente:** Menú desplegable para seleccionar desde qué cuenta emites el correo, configurado mediante un diccionario estructurado de credenciales.
+* **Envío Múltiple a Destinatarios:** Capacidad para enviar un mismo correo a varias direcciones simultáneamente escribiéndolas separadas por comas en el campo de entrada manual.
+* **Diseño Compacto y Tema Oscuro:** Interfaz optimizada (`380x580 px`) en tono azul oscuro (`#2C3E50`) con contraste claro para reducir la fatiga visual.
 
-### 1. Interfaz Gráfica de la Aplicación
-*(Adjuntar aquí la captura de pantalla que muestra la interfaz gráfica principal en funcionamiento)*
-```text
-[ Imagen de la interfaz gráfica del proyecto ]
-```
+---
 
-### 2. Bandeja de Entrada (Correo Recibido)
-*(Adjuntar aquí la captura de pantalla de la bandeja de entrada confirmando la recepción exitosa del correo)*
-```text
-[ Imagen del correo recibido en la bandeja de entrada ]
-```
+## 🛠️ Requisitos Previos
 
-## 🛠️ Entorno y Tecnologías
-- **Lenguaje:** Python 3.8.10
-- **Librería Gráfica:** Tkinter
-- **Empaquetado:** PyInstaller
+1. **Python 3.x** instalado.
+2. Sistema operativo **Windows** (requerido para los efectos de sonido de `winsound`).
+3. **Contraseñas de aplicación de Google:** Es necesario activar la verificación en dos pasos en cada cuenta de Gmail remitente y generar una contraseña de aplicación de 16 caracteres.
+
+---
+
+## ⚙️ Configuración e Instalación
+
+1. Clona o descarga este repositorio.
+2. Abre el archivo principal en tu editor de código.
+3. Actualiza el diccionario `CUENTAS_REMITENTES` con tus correos y contraseñas de aplicación:
+
+```python
+CUENTAS_REMITENTES = {
+    "tu_correo@gmail.com": "tu_contraseña_de_aplicacion",
+    "otro_correo@gmail.com": "segunda_contraseña_de_aplicacion"
+}
