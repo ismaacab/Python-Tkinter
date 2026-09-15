@@ -11,7 +11,7 @@ import winsound
 # IMPORTANTE: Reemplaza los textos por las contraseñas reales.
 # ---------------------------------------------------------
 CUENTAS_REMITENTES = {
-    "ismaafuentes.26@gmail.com": "thqh ggyg mnfr nlvy",
+    "ismaafuentes.26@gmail.com": "",
     "mario.ismael.canevari@gmail.com": "CONTRASENA_AQUI_2",
     "fjcoronati@gmail.com": "CONTRASENA_AQUI_3",
     "cuenta4@gmail.com": "CONTRASENA_4"
